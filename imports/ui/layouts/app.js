@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
 import AppNavigation from '../containers/app-navigation';
+import AppBar from 'material-ui/AppBar';
 import SideMenu from '../containers/side-menu';
 
 const isMobile = () => $(window).width() < 960
@@ -20,17 +21,26 @@ export class App extends React.Component {
     });
   }
 
+  toggleMobile() {
+    this.setState({mobileWidth: !this.state.mobileWidth})
+  }
+
   render() {
 
-    return <div className={!this.state.mobileWidth && 'desktop-width'}>
+    return <div>
 
-      <SideMenu />
+    <SideMenu isOpen={!this.state.mobileWidth} />
 
-      <AppNavigation mobileWidth={this.state.mobileWidth}/>
+    <div className={!this.state.mobileWidth && 'desktop-width'}>
+
+      <AppBar title="SIA Concierge" onLeftIconButtonTouchTap={this.toggleMobile.bind(this)}/>
+      {/*<AppNavigation />*/}
+
       <Grid>
         { this.props.children }
       </Grid>
 
+    </div>
     </div>
   }
 };
