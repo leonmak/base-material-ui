@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { Row, Col, FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import { handleLogin } from '../../modules/login';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export class Login extends React.Component {
   componentDidMount() {
@@ -14,8 +15,8 @@ export class Login extends React.Component {
 
   render() {
     return <Row>
-      <Col xs={ 12 } sm={ 6 } md={ 4 }>
-        <h4 className="page-header">Login</h4>
+      <Col xs={ 12 } xsOffset={ 0 } sm={ 6 } smOffset={3} md={ 4 } mdOffset={4} >
+        <h2 className="page-header">Login</h2>
         <form ref="login" className="login" onSubmit={ this.handleSubmit }>
           <FormGroup>
             <ControlLabel>Email Address</ControlLabel>
@@ -38,7 +39,7 @@ export class Login extends React.Component {
               placeholder="Password"
             />
           </FormGroup>
-          <Button type="submit" bsStyle="success">Login</Button>
+          <RaisedButton type="submit" secondary={true} fullWidth={true} label="Login"/>
         </form>
       </Col>
     </Row>;
