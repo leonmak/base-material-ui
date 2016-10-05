@@ -10,6 +10,7 @@ import { NotFound } from '../../ui/pages/not-found';
 import { RecoverPassword } from '../../ui/pages/recover-password';
 import { ResetPassword } from '../../ui/pages/reset-password';
 import { Signup } from '../../ui/pages/signup';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const requireAuth = (nextState, replace) => {
   if (!Meteor.loggingIn() && !Meteor.userId()) {
@@ -22,6 +23,7 @@ const requireAuth = (nextState, replace) => {
 
 Meteor.startup(() => {
   render(
+    <MuiThemeProvider>
     <Router history={ browserHistory }>
       <Route path="/" component={ App }>
         <IndexRoute name="index" component={ Index } onEnter={ requireAuth } />
@@ -32,7 +34,8 @@ Meteor.startup(() => {
         <Route name="signup" path="/signup" component={ Signup } />
         <Route path="*" component={ NotFound } />
       </Route>
-    </Router>,
+    </Router>
+    </MuiThemeProvider>,
     document.getElementById('react-root')
   );
 });
