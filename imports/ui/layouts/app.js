@@ -29,9 +29,9 @@ export class App extends React.Component {
 
     return <div>
 
-    <SideMenu isOpen={!this.state.mobileWidth} />
+    <SideMenu isOpen={!this.state.mobileWidth} isMobile={isMobile()}/>
 
-    <div className={!this.state.mobileWidth && 'desktop-width'}>
+    <div className={!this.state.mobileWidth && !isMobile() && 'desktop-width'}>
 
       <AppBar
         style={{textAlign: 'center'}}
