@@ -5,7 +5,8 @@ import $ from 'jquery';
 
 export const SideMenu = (props) => (
     <Drawer open={props.isOpen}>
-      <MenuItem>Menu Item</MenuItem>
-      <MenuItem>Menu Item 2</MenuItem>
+      <MenuItem>Home</MenuItem>
+      <MenuItem>Flights</MenuItem>
+      <MenuItem>Login</MenuItem>
     </Drawer>
 )

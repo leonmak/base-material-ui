@@ -33,7 +33,10 @@ export class App extends React.Component {
 
     <div className={!this.state.mobileWidth && 'desktop-width'}>
 
-      <AppBar title="SIA Concierge" onLeftIconButtonTouchTap={this.toggleMobile.bind(this)}/>
+      <AppBar
+        style={{textAlign: 'center'}}
+        title={<span className="app-title">SIA Concierge</span>}
+        onLeftIconButtonTouchTap={this.toggleMobile.bind(this)}/>
       {/*<AppNavigation />*/}
 
       <Grid>
