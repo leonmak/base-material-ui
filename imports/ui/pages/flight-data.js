@@ -100,6 +100,7 @@ export class FlightData extends React.Component {
     <Row>
       <Col xs={ 12 }>
       {this.props.params.id && <h4 className="page-header">In-Flight Data Anayltics for Flight: {this.props.params.id}</h4> }
+        <BarChart />
 
       <div style={{ maxWidth: 250 }}>
         <Toggle label="Flight Delay" toggled={this.state.delayed} onTouchTap={this.delayFlight}/>
@@ -113,7 +114,6 @@ export class FlightData extends React.Component {
       </div>
 
         <DocumentsList />
-        <BarChart />
         <SentimentChart />
         <FeedbackTable />
 

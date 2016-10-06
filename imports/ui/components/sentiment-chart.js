@@ -22,7 +22,7 @@ export default class SentimentChart extends React.Component {
   }
   render() {
       return (
-        <Chart chartType="PieChart" data={this.state.data} options={this.state.options} graph_id="BarChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
+        <Chart chartType="PieChart" data={this.state.data} options={this.state.options} graph_id="SentimentChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
       );
   }
 };
