@@ -9,9 +9,8 @@ var postRoutes = Picker.filter(function(req, res) {
 });
 
 
-postRoutes.route('/flights/:_id', function(params, req, res, next) {
-  console.log('id: ',params._id)
-  console.log('content: ', res.body)
+postRoutes.route('/api/flights/', function(params, req, res, next) {
+  console.log('content: ', req.body)
   // var doc = Documents.findOne(params._id);
-  // res.end(doc.content);
+  res.end('OK')
 });
