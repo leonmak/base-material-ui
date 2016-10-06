@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import DocumentsList from '../containers/documents-list.js';
 import { AddDocument } from '../components/add-document.js';
 import {Chart} from 'react-google-charts'
+import moment from 'moment';
 
 var LineChart = require("react-chartjs").Line;
 var chartData =  {
@@ -39,16 +40,23 @@ var chartOptions = {
   }
 };
 
-export const FlightData = props => (
-  <Row>
-    <Col xs={ 12 }>
-    {props.params.id && <h4 className="page-header">In-Flight Data Anayltics for Flight: {props.params.id}</h4> }
-      <AddDocument />
-      <DocumentsList />
 
-      <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
-      <Chart chartType="ScatterChart" data={[     ['Age', 'Weight'], [ 8,      12], [ 4,      5.5]]} options={{}} graph_id="ScatterChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
+export const FlightsData = props => {
 
-    </Col>
-  </Row>
-);
+  const getTime = () => `${moment().format('MMMM Do YYYY, h a')} to ${moment().add(1,'d').format('MMMM Do YYYY, h a')}`
+
+  return (
+    <Row>
+      <Col xs={ 12 }>
+      <h4 className="page-header">Active Flights from {getTime()}</h4>
+        <AddDocument />
+        <DocumentsList />
+
+        <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
+        <Chart chartType="ScatterChart" data={[     ['Age', 'Weight'], [ 8,      12], [ 4,      5.5]]} options={{}} graph_id="ScatterChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
+
+      </Col>
+    </Row>
+  )
+}
+

@@ -15,13 +15,15 @@ export const SideMenu = (props) => {
     <Drawer open={props.isOpen} openSecondary={props.isMobile}>
 
       <img className="app-logo" src="/favicon.png" />
-      <span>{"Welcome, " + (props.hasUser && props.hasUser.profile.name.first)}</span>
+      <span>{props.hasUser && ("Welcome, " + props.hasUser.profile.name.first)}</span>
 
 
       {props.hasUser ?
         <div>
         <MenuItem onTouchTap={goTo('/')}>Home</MenuItem>
-        <MenuItem onTouchTap={goTo('/documents')}>Flights</MenuItem>
+        <MenuItem onTouchTap={goTo('/flights')}>All Flights Today</MenuItem>
+        {/*<MenuItem onTouchTap={goTo('/flights'+props.hasUser.flightNum)}>Flights</MenuItem>*/}
+        <MenuItem onTouchTap={goTo('/flight/'+1)}>Assigned Flight</MenuItem>
         <MenuItem onTouchTap={handleLogout}>Log Out</MenuItem>
         </div>
       :

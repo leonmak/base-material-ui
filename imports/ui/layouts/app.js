@@ -41,7 +41,9 @@ export class App extends React.Component {
 
       <Grid>
         <Row>
+        <Col xs={12}>
           { this.props.children }
+        </Col>
         </Row>
       </Grid>
 
