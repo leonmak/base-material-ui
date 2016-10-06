@@ -9,7 +9,7 @@ const handleInsertDocument = (event) => {
 
   if (title !== '' && event.keyCode === 13) {
     insertDocument.call({
-      title,
+      title : title,
     }, (error) => {
       if (error) {
         Bert.alert(error.reason, 'danger');
