@@ -20,7 +20,7 @@ export default class FeedbackTable extends React.Component {
   }
   render() {
       return (
-        <Chart chartType="Table" data={this.state.data} options={this.state.options} graph_id="BarChart"  width={"100%"} height={"20%"}  legend_toggle={true} />
+        <Chart chartType="Table" data={this.state.data} options={this.state.options} graph_id="BarChart"  width={"100%"} height={"100%"}  legend_toggle={true} />
       );
   }
 };

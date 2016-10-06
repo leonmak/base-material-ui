@@ -57,9 +57,8 @@ export const FlightsData = props => {
         <div xs={12}>
             <BarChart />
         </div>
-        <div xs={12}>
-            <Feedbacks />
-        </div>
+        <Feedbacks />
+        <SentimentChart />
  
 
     </div>
