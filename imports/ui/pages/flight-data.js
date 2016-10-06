@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import DocumentsList from '../containers/documents-list.js';
 import BarChart from "../containers/bar-chart.js";
 import SentimentChart from "../containers/sentiment-chart.js";
+import FeedbackTable from "../containers/feedback-table.js"
 import { AddDocument } from '../components/add-document.js';
 import {Chart} from 'react-google-charts'
 
@@ -48,7 +49,8 @@ export const FlightData = props => (
       <AddDocument />
       <DocumentsList />
       <BarChart />
-      <SentimentChart />    
+      <SentimentChart />
+      <FeedbackTable />
       <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
       <Chart chartType="ScatterChart" data={[     ['Age', 'Weight'], [ 8,      12], [ 4,      5.5]]} options={{}} graph_id="ScatterChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
 
