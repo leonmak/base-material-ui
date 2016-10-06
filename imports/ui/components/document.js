@@ -40,14 +40,15 @@ const handleRemoveDocument = (documentId, event) => {
 export const Document = ({ document }) => (
   <ListGroupItem key={ document._id }>
     <Row>
-      <Col xs={ 8 } sm={ 10 }>
-        <FormControl
-          type="text"
-          defaultValue={ document.title }
-          onKeyUp={ handleUpdateDocument.bind(this, document._id) }
-        />
+      <Col xs={1} sm={1} className="text-center">
+        {document.seat}
+      </Col>    
+    
+      <Col xs={ 8 } sm={ 9 }>
+        {document.title}
       </Col>
-      <Col xs={ 4 } sm={ 2 }>
+    
+      <Col xs={ 3 } sm={ 2 }>
         <Button
           bsStyle="danger"
           className="btn-block"

@@ -22,8 +22,9 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The title of the document.',
   },
-    //seat: String,
-
+    seat:{
+     type:String
+    }
 });
 
 Documents.attachSchema(Documents.schema);

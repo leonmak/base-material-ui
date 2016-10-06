@@ -46,7 +46,6 @@ export const FlightData = props => (
   <Row>
     <Col xs={ 12 }>
     {props.params.id && <h4 className="page-header">In-Flight Data Anayltics for Flight: {props.params.id}</h4> }
-      <AddDocument />
       <DocumentsList />
       <BarChart />
       <SentimentChart />
