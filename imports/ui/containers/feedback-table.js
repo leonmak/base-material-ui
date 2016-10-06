@@ -7,9 +7,9 @@ import { Meteor } from 'meteor/meteor';
 const composer = (params, onData) => {
   const subscription = Meteor.subscribe('feedbacks');
   if (subscription.ready()) {
-    const ratings = Feedbacks.find().fetch();
-    onData(null, { feedback });
+    const feedbacks = Feedbacks.find().fetch();
+    onData(null, { feedbacks });
   }
 };
 
-export default composeWithTracker(composer, Loading)(Feedbacks);
+export default composeWithTracker(composer, Loading)(FeedbackTable);

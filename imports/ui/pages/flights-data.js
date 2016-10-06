@@ -49,18 +49,22 @@ export const FlightsData = props => {
   const getTime = () => `${moment().format('MMMM Do YYYY, h a')} to ${moment().add(1,'d').format('MMMM Do YYYY, h a')}`
 
   return (
-    <Row>
-      <Col xs={ 12 }>
+    <div>
+      <div xs={12} md={12} lg={12}>
       <h4 className="page-header">Active Flights from {getTime()}</h4>
         <DocumentsList />
-        <BarChart />
-        <SentimentChart />
-        <Feedbacks />
-        <LineChart data={chartData} options={chartOptions} width="600" height="250"/>
-        <Chart chartType="ScatterChart" data={[     ['Age', 'Weight'], [ 8,      12], [ 4,      5.5]]} options={{}} graph_id="ScatterChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
+      </div>
+        <div xs={12}>
+            <BarChart />
+        </div>
+        <div xs={12}>
+            <Feedbacks />
+        </div>
+ 
 
-      </Col>
-    </Row>
+    </div>
+            
+    
   )
 }
 

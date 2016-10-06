@@ -14,3 +14,4 @@ Ratings.schema = new SimpleSchema({
 });
 
 Ratings.attachSchema(Ratings.schema);
+
