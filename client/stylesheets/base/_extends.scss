@@ -15,3 +15,15 @@
 .desktop-width {
   margin-left: 256px;
 }
+
+.dashboard-btn > button {
+  min-width: 420px !important;
+  min-height: 300px !important;
+  > div > div {
+    min-width: 420px !important;
+    min-height: 300px !important;
+    > span {
+      margin: 30%;
+    }
+  }
+}

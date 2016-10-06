@@ -39,10 +39,10 @@ var chartOptions = {
   }
 };
 
-export const Documents = () => (
+export const FlightData = () => (
   <Row>
     <Col xs={ 12 }>
-      <h4 className="page-header">Documents</h4>
+      <h4 className="page-header">Flight Data</h4>
       <AddDocument />
       <DocumentsList />
 
