@@ -40,7 +40,9 @@ export class App extends React.Component {
       {/*<AppNavigation />*/}
 
       <Grid>
-        { this.props.children }
+        <Row>
+          { this.props.children }
+        </Row>
       </Grid>
 
     </div>

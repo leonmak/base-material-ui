@@ -9,7 +9,7 @@ const handleLogout = () => Meteor.logout(() => browserHistory.push('/login'));
 const goTo = url => () => browserHistory.push(url);
 
 export const SideMenu = (props) => {
-  console.log(props.hasUser)
+
   return(
 
     <Drawer open={props.isOpen} openSecondary={props.isMobile}>
