@@ -54,16 +54,16 @@ export const FlightsData = props => {
       <h4 className="page-header">Active Flights from {getTime()}</h4>
         <DocumentsList />
       </div>
-        <div xs={12}>
+        <div >
             <BarChart />
         </div>
         <Feedbacks />
         <SentimentChart />
- 
+
 
     </div>
-            
-    
+
+
   )
 }
 

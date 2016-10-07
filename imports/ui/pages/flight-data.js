@@ -47,7 +47,7 @@ var chartOptions = {
   }
 };
 
-const initialState = { value: '', delayed: false, takeOff: false, touchDown: false };
+const initialState = { value: undefined, delayed: false, takeOff: false, touchDown: false };
 
 export class FlightData extends React.Component {
   constructor(props) {
@@ -78,7 +78,7 @@ export class FlightData extends React.Component {
   delayFlight() {
     this.setState({
       delayed:!this.state.delayed,
-      value: ''
+      value: undefined
     })
   }
 
