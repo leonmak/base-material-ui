@@ -1,26 +1,48 @@
 import {Chart} from 'react-google-charts';
 import React from 'react'
+import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 
 export default class FeedbackTable extends React.Component {
   constructor(props){
     super(props);
-    this.state={
-      options:{
-        title: 'Feedback',
-        page: 'enable'
-      },
-      data:[
-            ['Feedback', 'Sentiment'],
-          ['The service was amazing!', true],
-          ['There was a really noisy passenger beside me',false],
-          ['The in-flight meals were delicious, look forward to flying with SIA again!', true],
-          ['Thank you for upgrading me to business class!', true]
-      ]
-    };
   }
+
   render() {
-      return (
-        <Chart chartType="Table" data={this.state.data} options={this.state.options} graph_id="FeedbackTable"  width={"100%"} height={"100%"}  legend_toggle={true} />
-      );
+    return (
+      <Table
+        height={'300px'}
+        fixedHeader={true}
+        fixedFooter={true}
+        selectable={true}
+        multiSelectable={false}
+      >
+        <TableHeader
+          displaySelectAll={false}
+          adjustForCheckbox={false}
+          enableSelectAll={false}
+        >
+          <TableRow>
+            <TableHeaderColumn>Name</TableHeaderColumn>
+            <TableHeaderColumn>Feedback</TableHeaderColumn>
+            <TableHeaderColumn>Sentiment</TableHeaderColumn>
+          </TableRow>
+        </TableHeader>
+        <TableBody
+          displayRowCheckbox={true}
+          deselectOnClickaway={true}
+          showRowHover={false}
+          displayRowCheckbox={false}
+          stripedRows={false}
+        >
+          {this.props.feedbacks.map( (row, index) => (
+            <TableRow key={index} selected={row.selected}>
+              <TableRowColumn>{row.passenger.fullName}</TableRowColumn>
+              <TableRowColumn>{row.feedback}</TableRowColumn>
+              <TableRowColumn>{row.sentiment ? 'Positive' : 'Negative'}</TableRowColumn>
+            </TableRow>
+            ))}
+        </TableBody>
+    </Table>
+    );
   }
 };

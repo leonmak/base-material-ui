@@ -19,7 +19,6 @@ export default class SentimentChart extends React.Component {
 
   componentDidMount() {
     var obj = _.groupBy(this.props.feedbacks, 'flightId');
-    console.log(obj)
     this.setState({flights : Object.keys(obj).map(function (key) { return obj[key]; }) });
   }
 

@@ -23,6 +23,15 @@ export default class BarChart extends React.Component {
       ]
     };
   }
+
+  componentDidMount() {
+    const obj = _.groupBy(this.props.ratings, 'rating');
+    let ratings = [['Rating', 'Rating']];
+    for(var i=1; i<6; i++){
+      ratings[i] = [i, (obj[i] ? obj[i].length : 0)];
+    }
+    this.setState({data: ratings});
+  }
   render() {
       return (
         <Chart chartType="BarChart" data={this.state.data} options={this.state.options} graph_id="BarChart"  width={"100%"} height={"400px"}  legend_toggle={true} />
