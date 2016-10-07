@@ -41,9 +41,9 @@ export const removeFeedback = new ValidatedMethod({
 
 rateLimit({
   methods: [
-    insertRating,
-    updateRating,
-    removeRating,
+    insertFeedback,
+    updateFeedback,
+    removeFeedback,
   ],
   limit: 5,
   timeRange: 1000,

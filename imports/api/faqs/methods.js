@@ -15,7 +15,7 @@ export const insertFaq = new ValidatedMethod({
 });
 
 export const removeFaq = new ValidatedMethod({
-  name: 'ratings.remove',
+  name: 'faqs.remove',
   validate: new SimpleSchema({
     _id: { type: String },
   }).validator(),
@@ -27,7 +27,6 @@ export const removeFaq = new ValidatedMethod({
 rateLimit({
   methods: [
     insertFaq,
-    updateFaq,
     removeFaq,
   ],
   limit: 5,

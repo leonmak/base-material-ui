@@ -39,7 +39,7 @@ export class App extends React.Component {
         onLeftIconButtonTouchTap={this.toggleMobile.bind(this)}/>
       {/*<AppNavigation />*/}
 
-          { this.props.children }
+      { this.props.children }
 
     </div>
     </div>

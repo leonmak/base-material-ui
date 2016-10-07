@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentsList from '../containers/documents-list.js';
 import BarChart from "../containers/bar-chart.js";
 import SentimentChart from "../containers/sentiment-chart.js";
@@ -96,9 +96,16 @@ export class FlightDataActions extends React.Component {
 
   render() {
     return (
+    <Grid>
     <Row>
       <Col xs={ 12 }>
-      {this.props.params.id && <h4 className="page-header">In-Flight Actions for Flight: {this.props.params.id}</h4> }
+      {this.props.params.id && <h2 className="page-header text-center">Actions for Flight: {this.props.params.id}</h2> }
+      </Col>
+
+    </Row>
+
+    <Row>
+      <Col xs={ 4 }>
 
       <div style={{ maxWidth: 250 }}>
         <Toggle label="Flight Delay" toggled={this.state.delayed} onTouchTap={this.delayFlight}/>
@@ -110,11 +117,15 @@ export class FlightDataActions extends React.Component {
         <Toggle label="Flight Take Off" toggled={this.state.takeOff} onTouchTap={this.takeOff}/>
         <Toggle label="Flight Touch Down" toggled={this.state.touchDown} onTouchTap={this.touchDown}/>
       </div>
-
-      <DocumentsList />
-
       </Col>
+
+      <Col xs={ 8 }>
+      <DocumentsList />
+      </Col>
+
     </Row>
+    </Grid>
+
     )
   }
 }

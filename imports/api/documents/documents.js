@@ -18,6 +18,9 @@ Documents.deny({
 });
 
 Documents.schema = new SimpleSchema({
+  flightId: {
+    type: String,
+  },
   title: {
     type: String,
     label: 'The title of the document.',

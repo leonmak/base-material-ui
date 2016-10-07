@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentsList from '../containers/documents-list.js';
 import BarChart from "../containers/bar-chart.js";
 import SentimentChart from "../containers/sentiment-chart.js";
@@ -49,21 +49,12 @@ export const FlightsData = props => {
   const getTime = () => `${moment().format('MMMM Do YYYY, h a')} to ${moment().add(1,'d').format('MMMM Do YYYY, h a')}`
 
   return (
-    <div>
-      <div xs={12} md={12} lg={12}>
-      <h4 className="page-header">Active Flights from {getTime()}</h4>
-        <DocumentsList />
-      </div>
-        <div >
-            <BarChart />
-        </div>
-        <Feedbacks />
-        <SentimentChart />
-
-
+    <Grid>
+    <div xs={12} md={12} lg={12}>
+    <h4 className="page-header">Active Flights from {getTime()}</h4>
+    <SentimentChart />
     </div>
-
-
+    </Grid>
   )
 }
 

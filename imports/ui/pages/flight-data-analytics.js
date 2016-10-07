@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import DocumentsList from '../containers/documents-list.js';
 import BarChart from "../containers/bar-chart.js";
 import SentimentChart from "../containers/sentiment-chart.js";
@@ -96,6 +96,7 @@ export class FlightDataAnalytics extends React.Component {
 
   render() {
     return (
+    <Grid>
     <Row>
       <Col xs={ 12 }>
       {this.props.params.id && <h4 className="page-header">In-Flight Data Analytics for Flight: {this.props.params.id}</h4> }
@@ -108,6 +109,7 @@ export class FlightDataAnalytics extends React.Component {
 
       </Col>
     </Row>
+    </Grid>
     )
   }
 }
