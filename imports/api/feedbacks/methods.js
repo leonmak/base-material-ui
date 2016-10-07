@@ -7,27 +7,13 @@ export const insertFeedback = new ValidatedMethod({
   name: 'feedback.insert',
   validate: new SimpleSchema({
     flightId: { type: String },
-    feedback: { type: String},
+    feedback: { type: String },
     sentiment:{ type: Boolean},
     passenger:{ type: Object, blackbox: true},
 
   }).validator(),
-  run: function run(feedback) {
-    Ratings.insert(feedback);
-  },
-});
-
-export const updateFeedback = new ValidatedMethod({
-  name: 'feedback.update',
-  validate: new SimpleSchema({
-    flightId: { type: String },
-    feedback: { type: String},
-    sentiment: {type: Boolean},
-    passenger:{ type: Object, blackbox: true},
-
-  }).validator(),
-  run({ _id, update }) {
-    Feedbacks.update(_id, { $set: update });
+  run(feedback) {
+    Feedbacks.insert(feedback);
   },
 });
 
@@ -44,7 +30,6 @@ export const removeFeedback = new ValidatedMethod({
 rateLimit({
   methods: [
     insertFeedback,
-    updateFeedback,
     removeFeedback,
   ],
   limit: 5,

@@ -13,7 +13,7 @@ var postRoutes = Picker.filter(function(req, res) {
 });
 
 postRoutes.route('/api/flights/', function(params, req, res, next) {
-  const errHandler = (error) => { error && console.log(error.reason, 'danger') };
+  const errHandler = (error) => { error && console.log('error:', error.reason) };
   console.log('content: ', req.body)
   // var doc = Documents.findOne(params._id);
   const content = req.body;
@@ -29,7 +29,7 @@ postRoutes.route('/api/flights/', function(params, req, res, next) {
     break;
 
     case 'feedback':
-      insertFeedback.call({flightId, feedback: content.context.feedback, sentiment: content.context.feedbackSentiment, passenger}, errHandler)
+      insertFeedback.call({flightId, feedback: content.context.feedback, sentiment: content.context.feedbackSentiment === "positive", passenger}, errHandler)
     break;
 
     case 'rawrequest':
