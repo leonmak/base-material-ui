@@ -15,8 +15,7 @@ export default class SentimentChart extends React.Component {
       data:[
           ['Sentiment', 'Count'],
           ['Positive',11],
-          ['Negative',2],
-          ['Neutral',5]
+          ['Negative',23],
       ]
     };
   }
