@@ -49,7 +49,7 @@ var chartOptions = {
 
 const initialState = { value: undefined, delayed: false, takeOff: false, touchDown: false };
 
-export class FlightData extends React.Component {
+export class FlightDataActions extends React.Component {
   constructor(props) {
     super(props);
 
@@ -98,7 +98,7 @@ export class FlightData extends React.Component {
     return (
     <Row>
       <Col xs={ 12 }>
-      {this.props.params.id && <h4 className="page-header">In-Flight Data Anayltics for Flight: {this.props.params.id}</h4> }
+      {this.props.params.id && <h4 className="page-header">In-Flight Actions for Flight: {this.props.params.id}</h4> }
 
       <div style={{ maxWidth: 250 }}>
         <Toggle label="Flight Delay" toggled={this.state.delayed} onTouchTap={this.delayFlight}/>
@@ -110,11 +110,8 @@ export class FlightData extends React.Component {
         <Toggle label="Flight Take Off" toggled={this.state.takeOff} onTouchTap={this.takeOff}/>
         <Toggle label="Flight Touch Down" toggled={this.state.touchDown} onTouchTap={this.touchDown}/>
       </div>
-        <BarChart />
 
-        <DocumentsList />
-        <SentimentChart />
-        <FeedbackTable />
+      <DocumentsList />
 
       </Col>
     </Row>

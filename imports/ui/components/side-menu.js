@@ -21,9 +21,10 @@ export const SideMenu = (props) => {
       {props.hasUser ?
         <div>
         <MenuItem onTouchTap={goTo('/')}>Home</MenuItem>
-        <MenuItem onTouchTap={goTo('/flights')}>All Flights Today</MenuItem>
+        <MenuItem onTouchTap={goTo('/flights')}>Active Flights</MenuItem>
         {/*<MenuItem onTouchTap={goTo('/flights'+props.hasUser.flightNum)}>Flights</MenuItem>*/}
-        <MenuItem onTouchTap={goTo('/flight/'+1)}>Assigned Flight</MenuItem>
+        <MenuItem onTouchTap={goTo('/flights'+'/SQ860'+'/actions')}>Current Flight Actions</MenuItem>
+        <MenuItem onTouchTap={goTo('/flights'+'/SQ860'+'/analytics')}>Current Flight Analytics</MenuItem>
         <MenuItem onTouchTap={handleLogout}>Log Out</MenuItem>
         </div>
       :
