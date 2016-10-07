@@ -22,9 +22,12 @@ Documents.schema = new SimpleSchema({
     type: String,
     label: 'The title of the document.',
   },
-    seat:{
-     type:String
-    }
+  seat: {
+    type: String
+  },
+  passenger: {
+    type: Object
+  }
 });
 
 Documents.attachSchema(Documents.schema);

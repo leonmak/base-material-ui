@@ -8,12 +8,15 @@ Feedbacks.schema = new SimpleSchema({
     type: String,
     //label: 'The title of the document.',
   },
-   feedback: {
-     type: String,
-    },
-   sentiment: {
-      type: Boolean,
-   }
+  feedback: {
+    type: String,
+  },
+  sentiment: {
+    type: Boolean,
+  },
+  passenger: {
+    type: Object,
+  }
 });
 
 Feedbacks.attachSchema(Feedbacks.schema);

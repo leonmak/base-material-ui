@@ -8,7 +8,8 @@ export const insertFeedback = new ValidatedMethod({
   validate: new SimpleSchema({
     flightId: { type: String },
     feedback: { type: String},
-    sentiment:{ type: Boolean}
+    sentiment:{ type: Boolean},
+    passenger:{ type: Object},
   }).validator(),
   run: function run(feedback) {
     Ratings.insert(feedback);
@@ -21,8 +22,7 @@ export const updateFeedback = new ValidatedMethod({
     flightId: { type: String },
     feedback: { type: String},
     sentiment: {type: Boolean},
-      _id: { type: String },
-    'update.feedback': { type: Number},
+    passenger:{ type: Object},
   }).validator(),
   run({ _id, update }) {
     Feedbacks.update(_id, { $set: update });
