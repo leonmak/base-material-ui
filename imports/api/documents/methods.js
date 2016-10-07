@@ -7,6 +7,10 @@ export const insertDocument = new ValidatedMethod({
   name: 'documents.insert',
   validate: new SimpleSchema({
     title: { type: String },
+    seat: { type: String },
+    flightId: { type: String },
+    passenger:{ type: Object, blackbox: true},
+
   }).validator(),
   run(document) {
     Documents.insert(document);

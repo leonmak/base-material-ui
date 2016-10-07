@@ -7,10 +7,10 @@ export const insertFaq = new ValidatedMethod({
   name: 'faqs.insert',
   validate: new SimpleSchema({
     flightId: { type: String },
-    sentiment: { type: Boolean}
+    faq: { type: String }
   }).validator(),
-  run(faqs) {
-    Faqs.insert(sentiment);
+  run(faq) {
+    Faqs.insert(faq);
   },
 });
 

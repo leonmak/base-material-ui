@@ -29,7 +29,8 @@ Documents.schema = new SimpleSchema({
     type: String
   },
   passenger: {
-    type: Object
+    type: Object,
+    blackbox: true
   }
 });
 

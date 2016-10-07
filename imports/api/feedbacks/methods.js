@@ -9,7 +9,8 @@ export const insertFeedback = new ValidatedMethod({
     flightId: { type: String },
     feedback: { type: String},
     sentiment:{ type: Boolean},
-    passenger:{ type: Object},
+    passenger:{ type: Object, blackbox: true},
+
   }).validator(),
   run: function run(feedback) {
     Ratings.insert(feedback);
@@ -22,7 +23,8 @@ export const updateFeedback = new ValidatedMethod({
     flightId: { type: String },
     feedback: { type: String},
     sentiment: {type: Boolean},
-    passenger:{ type: Object},
+    passenger:{ type: Object, blackbox: true},
+
   }).validator(),
   run({ _id, update }) {
     Feedbacks.update(_id, { $set: update });

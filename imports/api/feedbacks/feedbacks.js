@@ -16,6 +16,7 @@ Feedbacks.schema = new SimpleSchema({
   },
   passenger: {
     type: Object,
+    blackbox: true
   }
 });
 
