@@ -50,8 +50,8 @@ export const FlightsData = props => {
 
   return (
     <Grid>
-    <div xs={12} md={12} lg={12}>
-    <h4 className="page-header">Active Flights from {getTime()}</h4>
+    <div>
+    <h2 className="text-center page-header">Active Flights from {getTime()}</h2>
     <SentimentChart />
     </div>
     </Grid>
